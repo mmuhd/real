@@ -21,6 +21,7 @@ Route::middleware('guest')->group(function () {
     Route::view('register', 'auth.register')->name('register');
     Route::view('/sub', 'sub')->name('sub');
     Route::view('/fmt', 'fmt')->name('fmt');
+    Route::view('/trend', 'trend')->name('trend');
 });
 
 Route::view('password/reset', 'auth.passwords.email')->name('password.request');
@@ -40,3 +41,4 @@ Route::livewire('/submit', 'submit');
 Route::livewire('/format', 'format');
 Route::livewire('/policy', 'policy');
 Route::livewire('/about', 'about');
+Route::livewire('/trending', 'trending');

@@ -33,6 +33,9 @@
                         <li class="inline px-6">
                             <a href="/fmt" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Scam Formats</a>
                         </li>
+                        <li class="inline px-6">
+                            <a href="/trend" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Trending Formats</a>
+                        </li>
                     </ul>
                 </div>
             </div>

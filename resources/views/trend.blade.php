@@ -21,11 +21,10 @@
             <div class="flex flex-col justify-around">
                 <div class="space-y-6">
                     <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900 leading-9">
-                        Search Email address For Scam
+                        Trending Scam Formats
                     </h2>
 
-                    <livewire:search />
-
+                    <livewire:trending />
                     <ul class="list-reset">
                         <li class="inline px-6">
                             <a href="/sub" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Submit Email</a>
@@ -37,7 +36,6 @@
                             <a href="/trend" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:underline transition ease-in-out duration-150">Trending Formats</a>
                         </li>
                     </ul>
-                    <livewire:email-stat />
                 </div>
             </div>
         </div>
