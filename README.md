@@ -117,23 +117,19 @@ sudo nano /etc/apache2/sites-available/laravel_project.conf
 In the larvel_project.conf
 
 ```bash
-NameVirtualHost *:8080
-Listen 8080
- 
-<VirtualHost *:8080>
+<VirtualHost *:80>
     ServerAdmin admin@example.com
-    ServerName laravel.dev
-    ServerAlias www.laravel.dev
-    DocumentRoot /home/user/projects/laravel_project/public
-     
-    <Directory /home/user/projects/laravel_project/public/>
+    ServerName something.com
+    DocumentRoot /var/www/html/real/public
+
+    <Directory /var/www/html/real/public/>
             Options Indexes FollowSymLinks MultiViews
             AllowOverride All
             Order allow,deny
             allow from all
             Require all granted
     </Directory>
-     
+
     LogLevel debug
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
