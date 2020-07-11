@@ -145,17 +145,12 @@ sudo service apache2 restart
 ```
 
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [muazumusamuhd@gmail.com](mailto:muazumusamuhd@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This software is licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # real
