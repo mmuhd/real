@@ -96,6 +96,19 @@ php artisan migrate
 php artisan db:seed
 ```
 
+```bash
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get -y install nodejs
+```
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
 
 ```bash
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/laravel.conf
