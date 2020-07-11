@@ -1,70 +1,151 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## To install
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+After AWS Instance creation and putty login
 
-## About Laravel
+```bash
+sudo apt-get update
+```
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```bash
+sudo apt-get upgrade
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```bash
+sudo apt-get install apache2
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```bash
+sudo add-apt-repository ppa:ondrej/php
+```
+```bash
+sudo apt-get update
+```
 
-## Learning Laravel
+```bash
+sudo apt-get install php7.4
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```bash
+sudo service apache2 restart
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+sudo apt-get install php7.4[tab][tab]
+```
 
-## Laravel Sponsors
+```bash
+sudo apt install php7.4-common php7.4-bcmath openssl php7.4-json php7.4-mbstring
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```bash
+sudo a2enmod rewrite
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+```bash
+sudo service apache2 restart
+```
 
-## Contributing
+```bash
+sudo apt-get install mysql-server
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+sudo apt-get install php7.4-mysql
+```
+
+```bash
+sudo apt-get install phpmyadmin
+```
+
+```bash
+cd ~
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+```
+
+```bash
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+```
+
+```bash
+git clone https://github.com/mmuhd/real.git
+```
+
+```bash
+cd real
+```
+
+```bash
+composer install
+```
+
+```bash
+php artisan key:generate
+```
+
+```bash
+cp .env.example .env
+```
+
+After creating database
+
+```bash
+php artisan migrate
+```
+
+```bash
+php artisan db:seed
+```
+
+
+```bash
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/laravel.conf
+sudo nano /etc/apache2/sites-available/laravel_project.conf
+```
+In the larvel_project.conf
+
+```bash
+NameVirtualHost *:8080
+Listen 8080
+ 
+<VirtualHost *:8080>
+    ServerAdmin admin@example.com
+    ServerName laravel.dev
+    ServerAlias www.laravel.dev
+    DocumentRoot /home/user/projects/laravel_project/public
+     
+    <Directory /home/user/projects/laravel_project/public/>
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+            Require all granted
+    </Directory>
+     
+    LogLevel debug
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+
+```bash
+sudo nano /etc/hosts
+```
+
+```bash
+127.0.0.1   laravel.dev
+```
+
+```bash
+sudo a2ensite laravel_project.conf
+sudo a2dissite 000-default.conf
+```
+
+```bash
+sudo service apache2 restart
+```
+
+
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
 ## Code of Conduct
 
